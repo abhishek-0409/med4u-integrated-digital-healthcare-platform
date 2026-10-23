@@ -4,7 +4,7 @@ This monorepo contains the Med4U patient app, doctor app, and NestJS backend.
 
 ## Projects
 
-- `Med4u/` ? patient mobile application
+- `Med4u-patient/` ? patient mobile application
 - `Med4u-doctor/` ? doctor mobile application
 - `Med4u-backend/` ? NestJS API and database migrations
 
