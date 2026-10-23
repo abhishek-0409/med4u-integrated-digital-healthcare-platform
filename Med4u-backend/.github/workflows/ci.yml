@@ -1,0 +1,67 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    # Real PostgreSQL for the integration tests. Redis is not needed: the tests stub it.
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: ci_user
+          POSTGRES_PASSWORD: ci_password
+          POSTGRES_DB: med4u_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U ci_user -d med4u_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      # The DB integration suite wipes the schema of TEST_DB_NAME and refuses names not ending in _test.
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_USERNAME: ci_user
+      DB_PASSWORD: ci_password
+      TEST_DB_NAME: med4u_test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install (from lockfile)
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint (errors fail; formatting is advisory)
+        run: npm run lint:check
+
+      - name: Tests (unit + PostgreSQL integration)
+        run: npm test -- --ci
+
+      - name: Production build
+        run: npm run build
+
+      - name: Dependency audit (production dependencies, high and above)
+        run: npm audit --omit=dev --audit-level=high

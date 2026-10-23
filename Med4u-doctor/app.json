@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Med4U Doctor",
+    "slug": "med4u-doctor",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "android": {
+      "package": "com.med4u.doctor",
+      "versionCode": 1
+    },
+    "ios": {
+      "bundleIdentifier": "com.med4u.doctor"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "Med4U Doctor uses your camera during a video consultation.",
+          "microphonePermission": "Med4U Doctor uses your microphone during a video consultation."
+        }
+      ]
+    ]
+  }
+}

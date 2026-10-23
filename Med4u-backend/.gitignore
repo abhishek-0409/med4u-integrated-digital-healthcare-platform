@@ -1,0 +1,44 @@
+﻿node_modules/
+dist/
+.env
+.env.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+.DS_Store
+Thumbs.db
+
+# Private prescription files (encrypted at rest; never commit)
+storage/
+# Private local medical document storage (configure PRIVATE_FILES_DIR outside the public web root)
+.private-medical-files/
+
+# Test output, backups and key material (added by the stabilization sprint)
+coverage/
+.nyc_output/
+*.dump
+*.sql.gz
+*.bak
+*.pem
+*.key
+*.p12
+.env.*
+!.env.example
+
+# Local database and sensitive uploads
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+/uploads/
+/local-uploads/
+/patient-data/
+/medical-records/
+
+# Additional private certificates and provider credentials
+*.pfx
+*.cer
+*.crt
+*.mobileprovision
+service-account*.json
+*-service-account.json

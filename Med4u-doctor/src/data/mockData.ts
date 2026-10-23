@@ -1,0 +1,85 @@
+import { DoctorAppointment, DoctorProfile } from "../types/appointment";
+
+export const MOCK_DATA_LABEL = "MOCK DATA · PREVIEW ONLY";
+export const MOCK_DOCTOR: DoctorProfile = {
+  name: "Dr. Priya Sharma",
+  specialty: "General Physician",
+  clinic: "Med4U Care Centre · Pune",
+  email: "priya.sharma@example.test",
+  phone: "+91 90000 12345",
+  registrationNumber: "DEMO-MH-0000",
+};
+
+export const MOCK_APPOINTMENTS: DoctorAppointment[] = [
+  {
+    id: "demo-appt-001",
+    patientName: "Aarav Mehta",
+    age: 34,
+    gender: "Male",
+    reason: "Seasonal allergy follow-up",
+    date: "Today",
+    time: "09:30 AM",
+    mode: "Video",
+    status: "confirmed",
+    phone: "+91 90000 00001",
+    notes: "Sample patient note for UI preview.",
+  },
+  {
+    id: "demo-appt-002",
+    patientName: "Ananya Rao",
+    age: 27,
+    gender: "Female",
+    reason: "General consultation",
+    date: "Today",
+    time: "11:00 AM",
+    mode: "In person",
+    status: "pending",
+    phone: "+91 90000 00002",
+    notes: "Sample patient note for UI preview.",
+  },
+  {
+    id: "demo-appt-003",
+    patientName: "Kabir Shah",
+    age: 46,
+    gender: "Male",
+    reason: "Blood pressure review",
+    date: "Today",
+    time: "02:15 PM",
+    mode: "Video",
+    status: "confirmed",
+    phone: "+91 90000 00003",
+    notes: "Sample patient note for UI preview.",
+  },
+  {
+    id: "demo-appt-004",
+    patientName: "Mira Desai",
+    age: 31,
+    gender: "Female",
+    reason: "Prescription follow-up",
+    date: "Tomorrow",
+    time: "10:00 AM",
+    mode: "In person",
+    status: "pending",
+    phone: "+91 90000 00004",
+    notes: "Sample patient note for UI preview.",
+  },
+  {
+    id: "demo-appt-005",
+    patientName: "Rohan Kulkarni",
+    age: 52,
+    gender: "Male",
+    reason: "Routine check-up",
+    date: "Tomorrow",
+    time: "12:30 PM",
+    mode: "Video",
+    status: "confirmed",
+    phone: "+91 90000 00005",
+    notes: "Sample patient note for UI preview.",
+  },
+];
+
+export const MOCK_HISTORY = [
+  { id: "history-1", patient: "Neha Iyer", detail: "Consultation completed", date: "12 Oct 2026" },
+  { id: "history-2", patient: "Vikram Joshi", detail: "Prescription issued", date: "10 Oct 2026" },
+  { id: "history-3", patient: "Sara Khan", detail: "Consultation completed", date: "08 Oct 2026" },
+];

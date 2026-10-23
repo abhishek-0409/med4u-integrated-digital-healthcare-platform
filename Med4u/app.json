@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Med4U",
+    "slug": "med4u",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.med4u.app",
+      "permissions": ["android.permission.CAMERA", "android.permission.RECORD_AUDIO", "android.permission.POST_NOTIFICATIONS"]
+    },
+    "plugins": [
+      "expo-secure-store",
+      ["expo-notifications", { "defaultChannel": "default" }],
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "Med4U uses your camera during a video consultation.",
+          "microphonePermission": "Med4U uses your microphone during a video consultation."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Med4U uses your photos only when you choose a prescription to upload.",
+          "cameraPermission": "Med4U uses the camera only when you photograph a prescription to upload."
+        }
+      ]
+    ]
+  }
+}

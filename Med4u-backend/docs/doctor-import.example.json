@@ -1,0 +1,28 @@
+[
+  {
+    "fullName": "Dr. Example",
+    "gender": "female",
+    "specialization": "General Medicine",
+    "registrationCouncil": "Example State Medical Council",
+    "registrationNumber": "REG-EXAMPLE-0000",
+    "registrationYear": 2012,
+    "qualifications": [
+      {
+        "degree": "MBBS",
+        "institution": "Name of the medical college, if the source states it",
+        "year": 2011
+      }
+    ],
+    "careerStartYear": 2012,
+    "clinicName": "Example Clinic",
+    "city": "Example City",
+    "address": "Example Road, Example City",
+    "consultationMode": "BOTH",
+    "consultationFeeInr": 500,
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "source": "manual-example"
+  }
+]

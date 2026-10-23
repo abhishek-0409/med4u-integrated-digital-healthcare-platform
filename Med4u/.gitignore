@@ -1,0 +1,51 @@
+node_modules/
+.expo/
+.vscode/
+dist/
+build/
+/android/
+/ios/
+
+# Local env files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep the documented template tracked
+!.env.example
+
+# Test output and signing / service credentials (added by the stabilization sprint)
+coverage/
+dist-web/
+*.jks
+*.keystore
+*.p8
+*.p12
+*.pem
+*.key
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+*.dump
+
+# Local databases, generated reports, uploads, and personal records
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+/uploads/
+/local-uploads/
+/patient-data/
+/medical-records/
+
+# Additional private signing and service credentials
+*.pfx
+*.cer
+*.crt
+*.mobileprovision
+service-account*.json
+*-service-account.json
